@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pp'
 
 RSpec.describe 'Todos API', type: :request do
   # initialize test data

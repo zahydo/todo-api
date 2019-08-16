@@ -13,7 +13,7 @@ class TodosController < ApplicationController
 
   # POST /todos
   def create
-    @todo = Todo.create!(todo_params)
+    @todo = Todo.create!(todo_params) # will raise an error on validation failure catched by ExceptionHandler
     json_response(@todo,:created)
   end
 
@@ -35,6 +35,6 @@ class TodosController < ApplicationController
     end
     
     def set_todo
-      @todo = Todo.find(params[:id])
+      @todo = Todo.find(params[:id]) # will raise an error of RecordNotFound catched by ExceptionHandler
     end
 end
