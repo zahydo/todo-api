@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :todos, defaults: { format: 'json' } do
     resources :items, defaults: { format: 'json' }
   end
+  post 'auth/login', to: 'authentication#authenticate'
+  post 'signup', to: 'users#create'
 end
