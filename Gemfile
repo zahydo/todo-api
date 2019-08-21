@@ -15,7 +15,10 @@ gem 'puma', '~> 3.11'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+# Allows serializer model specific attributes
+gem 'active_model_serializers', '~> 0.10.0'
+# To get paginated data
+gem 'will_paginate'
 # Json Web Token
 gem 'jwt'
 
@@ -37,6 +40,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.5'
+  gem 'faker'
 end
 
 group :development do
@@ -51,7 +55,6 @@ end
 group :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'faker'
   gem 'database_cleaner'
 end
 
