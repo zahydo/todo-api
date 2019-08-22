@@ -13,6 +13,7 @@ WORKDIR /app/
 RUN bundle install
 # Set default environment
 ENV RAILS_ENV development
+RUN bundle exec rails db:setup
 # Script to setup database
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
