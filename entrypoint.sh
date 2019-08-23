@@ -1,5 +1,7 @@
 #!/bin/bash
 set -e
+# Setup database for first time
+bundle exec rails db:setup
 
 # Run migrations
 bundle exec rails db:migrate
