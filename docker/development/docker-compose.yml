@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ../../
+    volumes:
+      - web-data:/app
+    ports:
+      - "3000:3000"
+volumes:
+  web-data:
+    driver: local

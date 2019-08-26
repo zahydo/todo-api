@@ -1,0 +1,27 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=developer
+      - POSTGRES_PASSWORD=developer_pass
+    ports:
+      - "5432:5432"
+  web:
+    build:
+      context: ../../
+    volumes:
+      - web-data:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    env_file:
+      - app.env
+volumes:
+  web-data:
+    driver: local
+  db-data:
+    driver: local
