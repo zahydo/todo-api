@@ -26,7 +26,6 @@ production:
   <<: *default
   adapter: postgresql
   database: todos-api_production
-  host: <%= ENV.fetch('DATABASE_HOST') {"0.0.0.0"} %>
-  port: <%= ENV.fetch('DATABASE_PORT') {"5432"} %>
+  host: db
   username: <%= ENV.fetch('DATABASE_USERNAME') {"developer"} %>
   password: <%= ENV.fetch('DATABASE_PASSWORD') {"developer_pass"} %>
